@@ -36,7 +36,13 @@ async function getWeatherData(cityValue){
         weatherDataEl.querySelector(".icon").innerHTML = `<img Src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon">`;
         weatherDataEl.querySelector(
             ".temperature"
-        ).textContent = `${temperature}°C`
+        ).textContent = `${temperature}°C`;
+        weatherDataEl.querySelector(
+            ".description"
+        ).textContent = `${description}` 
+        weatherDataEl.querySelector(
+            ".details"
+        ).innerHTML = details.map((detail) => `<div>${detail}</div>`).join("");
     } catch (error) {
         weatherDataEl.querySelector(".icon").innerHTML = "";
         weatherDataEl.querySelector(".temperature").textContent ="";
